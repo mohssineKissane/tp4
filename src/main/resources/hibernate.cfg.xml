@@ -14,7 +14,7 @@
 
         <!-- ✅ Connection URL -->
         <property name="hibernate.connection.url">
-            jdbc:mysql://localhost:3306/base?useSSL=false&amp;serverTimezone=UTC&amp;zeroDateTimeBehavior=convertToNull
+            jdbc:mysql://localhost:3306/my_database?useSSL=false&amp;serverTimezone=UTC&amp;zeroDateTimeBehavior=convertToNull
         </property>
 
         <!-- ✅ XAMPP default credentials -->
