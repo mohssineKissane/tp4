@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- ✅ Use modern driver class -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+        <!-- ✅ Update dialect for MySQL 8+ (MariaDB in XAMPP also works fine) -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- ✅ Connection URL -->
+        <property name="hibernate.connection.url">
+            jdbc:mysql://localhost:3306/base?useSSL=false&amp;serverTimezone=UTC&amp;zeroDateTimeBehavior=convertToNull
+        </property>
+
+        <!-- ✅ XAMPP default credentials -->
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password"></property> <!-- leave empty unless you set one in phpMyAdmin -->
+
+        <!-- Optional settings -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- ✅ Entity mappings -->
+        <mapping class="entities.Salle"/>
+        <mapping class="entities.Machine"/>
+
+    </session-factory>
+</hibernate-configuration>
